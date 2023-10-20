@@ -1,14 +1,21 @@
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   const { date, details } = props;
   return (
     <div className="expense-item">
       <ExpenseDate date={date} />
       <ExpenseDetails details={details} />
+      <button
+        onClick={() => {
+          console.log("clicked");
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
-}
+};
 
 export default ExpenseItem;

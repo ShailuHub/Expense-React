@@ -1,7 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
+import React from "react";
 import "./Expenses.css";
-import Card from "./Card";
-function Expenses() {
+import Card from "../UI/Card";
+const Expenses = () => {
   const expenses = [
     {
       date: new Date("2023-05-01"),
@@ -40,6 +41,6 @@ function Expenses() {
       })}
     </Card>
   );
-}
+};
 
 export default Expenses;
