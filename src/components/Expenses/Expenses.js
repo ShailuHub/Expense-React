@@ -2,6 +2,9 @@ import ExpenseItem from "./ExpenseItem";
 import React from "react";
 import "./Expenses.css";
 import Card from "../UI/Card";
+import NewExpense from "../NewExpense/NewExpense";
+import ExpensesFilter from "./ExpenseFilter";
+
 const Expenses = () => {
   const expenses = [
     {
@@ -29,17 +32,25 @@ const Expenses = () => {
       location: "Forum Mall",
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+  };
   return (
-    <Card className="expenses">
-      {expenses.map((item, idx) => {
-        const details = {
-          title: item.title,
-          amount: item.amount,
-          location: item.location,
-        };
-        return <ExpenseItem key={idx} date={item.date} details={details} />;
-      })}
-    </Card>
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Card className="expenses">
+        <ExpensesFilter />
+        {expenses.map((item, idx) => {
+          const details = {
+            title: item.title,
+            amount: item.amount,
+            location: item.location,
+          };
+          return <ExpenseItem key={idx} date={item.date} details={details} />;
+        })}
+      </Card>
+    </div>
   );
 };
 

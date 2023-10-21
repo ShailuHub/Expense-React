@@ -4,16 +4,18 @@ import ExpenseDetails from "./ExpenseDetails";
 const ExpenseItem = (props) => {
   const { date, details } = props;
   return (
-    <div className="expense-item">
-      <ExpenseDate date={date} />
-      <ExpenseDetails details={details} />
-      <button
-        onClick={() => {
-          console.log("clicked");
-        }}
-      >
-        Delete
-      </button>
+    <div>
+      <div className="expense-item">
+        <ExpenseDate date={date} />
+        <ExpenseDetails details={details} />
+        <button
+          onClick={() => {
+            console.log("clicked");
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
